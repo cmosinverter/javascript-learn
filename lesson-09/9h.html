@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9h</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <input class="js-text-input" onkeyup="syncText();"></input>
+        <p class="js-text-print"></p>
+        <script>
+            function syncText() {
+                // const textInput = document.querySelector('.js-text-input');
+                // document.querySelector('.js-text-input');
+                document.querySelector('.js-text-print').innerHTML = document.querySelector('.js-text-input').value;
+            }
+        </script>
+    </body>
+</html>
