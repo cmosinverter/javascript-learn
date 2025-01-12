@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12h</title>
+    </head>
+    <body>
+        <button onclick="add()">Add</button>
+        <button onclick="remove()">Remove</button>
+        <script>
+            let num = 0;
+            let flag = false;
+            setInterval(function() {
+                if (flag) {
+                    flag = false;
+                    document.title = num ? `(${num}) New messages` : `App`
+                } else {
+                    flag = true;
+                    document.title = `App`
+                }
+            }, 1000)
+
+            function add() {
+                num++;
+            }
+
+            function remove() {
+                num--;
+                if (num <= 0) {
+                    num = 0;
+                }
+            }
+        </script>
+    </body>
+</html>

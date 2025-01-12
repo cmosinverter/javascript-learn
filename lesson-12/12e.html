@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12e</title>
+    </head>
+    <body>
+        <button class="add-to-cart-button" onclick="added()">Click</button>
+        <p class="added-message"></p>
+        <script>
+
+            function added() {
+                document.querySelector('.added-message').innerHTML = 'Added to cart!';
+                setTimeout(function() {
+                    document.querySelector('.added-message').innerHTML = '';
+                }, 2000);
+            }
+        </script>
+    </body>
+</html>

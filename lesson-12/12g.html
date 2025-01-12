@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12g</title>
+    </head>
+    <body>
+        <script>
+            let num = 2;
+            let flag = false;
+            setInterval(function() {
+                if (flag) {
+                    flag = false;
+                    document.title = `(${num}) New messages`
+                } else {
+                    flag = true;
+                    document.title = `App`
+                }
+            }, 1000)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12d</title>
+    </head>
+    <body>
+        <button class="finish-button" onclick="displayFinish()">Click</button>
+        <script>
+
+            function displayFinish() {
+                document.querySelector('.finish-button').innerHTML = 'Loading...';
+                setInterval(function() {
+                    document.querySelector('.finish-button').innerHTML = 'Finish!';
+                }, 1000);
+            }
+        </script>
+    </body>
+</html>
