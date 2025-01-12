@@ -6,6 +6,7 @@
         </style>
     </head>
     <body>
+        <button class="js-button">Click</button>
         <script>
 
             /*
@@ -60,6 +61,7 @@
             console.log('next line2');
             */
 
+            /*
             [
                 'make dinner',
                 'do laundry',
@@ -71,7 +73,62 @@
                 console.log(index, value);
             });
 
+            const regularFunction = function(param, param2) {
+                console.log('hello');
+                return 5;
+            };
 
+            const arrowFunction = (param, param2) => {
+                console.log('hello');
+                return 5;
+            };
+
+            arrowFunction();
+
+            const oneParam = param => {
+                console.log(param + 1);
+            }
+
+            oneParam(5);
+
+            const oneLine = () => 2 + 3;
+
+            console.log(oneLine());
+
+            const objec2 = {
+                method() {
+                    console.log('hello');
+                }
+            }
+
+            objec2.method();
+            */
+
+            /*
+            const buttonElement = document.querySelector('.js-button');
+
+            function eventListener() {
+                console.log('clicked');
+            };
+
+            buttonElement.addEventListener('click', eventListener);
+
+            buttonElement.removeEventListener('click', eventListener);
+
+            buttonElement.addEventListener('click', () => {
+                console.log('clicked2');
+            });
+            */
+
+            console.log([1, -3, 5].filter((value, index) => {
+                if (value > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }));
+
+            console.log([1, -3, 5].filter((value, index) => value > 0));
         </script>
     </body>
 </html>

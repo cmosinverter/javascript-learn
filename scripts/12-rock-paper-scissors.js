@@ -56,7 +56,7 @@ function autoPlay() {
     if (!isAutoPlaying) {
         isAutoPlaying = true;
         document.querySelector('.js-auto-play-button').innerHTML = 'Stop Play';
-        intervalId = setInterval(function () {
+        intervalId = setInterval(() => {
             const playerChoice = pickComputerMove()
             playGame(playerChoice);
         }, 1000)
@@ -66,4 +66,30 @@ function autoPlay() {
         isAutoPlaying = false;
     }
 
-} 
+}
+
+document.querySelector('.js-rock-button')
+    .addEventListener('click', () => {
+        playGame('Rock');
+    });
+
+document.querySelector('.js-paper-button')
+    .addEventListener('click', () => {
+        playGame('Paper')
+    });
+
+document.querySelector('.js-scissors-button')
+    .addEventListener('click', () => {
+        playGame('Scissors')
+    });
+
+
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('Rock');
+    } else if (event.key === 'p') {
+        playGame('Paper');
+    } else if (event.key === 's') {
+        playGame('Scissors');
+    }
+});
