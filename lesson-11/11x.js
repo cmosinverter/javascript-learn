@@ -1,4 +1,4 @@
-const todoList = [];
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [];
 
 renderTodoList();
 
@@ -20,6 +20,8 @@ function addTodo() {
     const name = inputElement.value;
     todoList.push(name);
     inputElement.value = '';
+
+    localStorage.setItem('todoList', JSON.stringify(todoList));
     renderTodoList();
     
 }
