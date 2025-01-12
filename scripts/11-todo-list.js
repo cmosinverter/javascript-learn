@@ -7,8 +7,16 @@ function renderTodoList() {
 
     for (let i = 0; i < todoList.length; i++) {
         // print on the web page
-        const todo = todoList[i];
-        const html = `<p>${todo}</p>`;
+        const todoObject = todoList[i];
+        const {name, dueDate} = todoObject;
+        const html = `
+                <div>${name}</div>
+                <div>${dueDate}</div>
+                <button onclick="
+                        todoList.splice(${i}, 1);
+                        renderTodoList();
+                    " class="delete-button">Delete</button>
+            `;
         todoListHTML += html;
     }
 
@@ -17,8 +25,13 @@ function renderTodoList() {
 
 function addTodo() {
     const inputElement = document.querySelector('.js-name-input');
+    const dueDateElement = document.querySelector('.js-due-date-input');
     const name = inputElement.value;
-    todoList.push(name);
+    const dueDate = dueDateElement.value;
+    todoList.push({
+        name: name,
+        dueDate: dueDate
+    });
     inputElement.value = '';
     renderTodoList();
     
