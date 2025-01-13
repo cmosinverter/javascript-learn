@@ -4,7 +4,7 @@
         <title>12f</title>
     </head>
     <body>
-        <button class="add-to-cart-button" onclick="added()">Click</button>
+        <button class="add-to-cart-button js-add-to-cart-button">Click</button>
         <p class="added-message"></p>
         <script>
 
@@ -12,10 +12,13 @@
             function added() {
                 document.querySelector('.added-message').innerHTML = 'Added to cart!';
                 clearTimeout(timeoutId);
-                timeoutId = setTimeout(function() {
+                timeoutId = setTimeout(() => {
                     document.querySelector('.added-message').innerHTML = '';
                 }, 2000);
             }
+            const buttonElement = document.querySelector('.js-add-to-cart-button');
+            buttonElement.addEventListener('click', added);
+
         </script>
     </body>
 </html>

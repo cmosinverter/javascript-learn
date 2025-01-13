@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>12o</title>
+    </head>
+    <body>
+        <script>
+            function removeEgg(foods) {
+                let counter = 2;
+                return foods.filter((value, index) => {
+                    if (value === 'egg' && counter > 0) {
+                        counter--;
+                        return false;
+                    } else {
+                        return true;
+                    }
+                });
+            }
+            console.log(removeEgg(['egg', 'apple', 'egg', 'egg', 'orange']));
+        </script>
+    </body>
+</html>

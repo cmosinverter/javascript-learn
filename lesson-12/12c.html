@@ -4,14 +4,18 @@
         <title>12c</title>
     </head>
     <body>
-        <button class="finish-button" onclick="displayFinish()">Click</button>
+        <button class="finish-button js-finish-button">Click</button>
         <script>
 
             function displayFinish() {
-                setInterval(function() {
+                setInterval(() => {
                     document.querySelector('.finish-button').innerHTML = 'Finish!';
                 }, 1000);
             }
+
+            const buttonElement = document.querySelector('.js-finish-button');
+            buttonElement.addEventListener('click', displayFinish);
+            
         </script>
     </body>
 </html>
